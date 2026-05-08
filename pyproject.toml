@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-incident-reporting-mcp"
+version = "1.0.0"
+description = "AI Incident Reporting Compliance MCP. Unified classification + reporting-clock tracker across EU AI Act Article 73, DORA Article 19, NIS2 Article 23, GDPR Article 33, ISO/IEC 42001 clause 9, and UK AISI voluntary frontier-model reporting. One incident → all regime clocks in parallel. HMAC-signed post-incident attestation. By MEOK AI Labs."
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
+keywords = ["mcp", "ai-incident-reporting", "eu-ai-act", "article-73", "dora", "nis2", "gdpr", "iso-42001", "uk-aisi", "incident-response", "regulatory-compliance", "multi-regime", "signed-attestation", "meok-ai-labs"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent", "Topic :: Security"]
+dependencies = ["mcp>=1.0.0"]
+
+[project.urls]
+Homepage = "https://meok.ai/ai-incident-reporting-mcp"
+Repository = "https://github.com/CSOAI-ORG/ai-incident-reporting-mcp"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+only-include = ["server.py"]
+
+[project.scripts]
+ai-incident-reporting-mcp = "server:main"
