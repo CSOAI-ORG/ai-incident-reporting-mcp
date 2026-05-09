@@ -57,6 +57,8 @@ Need the complete multi-regime stack? **[councilof.ai](https://councilof.ai)** �
 - [`dora-nis2-crosswalk-mcp`](https://pypi.org/project/dora-nis2-crosswalk-mcp/)
 - [`meok-attestation-verify`](https://pypi.org/project/meok-attestation-verify/)
 
+> **If this tool helps your compliance workflow, please [star this repo](https://github.com/CSOAI-ORG/ai-incident-reporting-mcp/stargazers)** — it helps other teams find it.
+
 ## License
 
 MIT — [MEOK AI Labs](https://meok.ai), 2026.
