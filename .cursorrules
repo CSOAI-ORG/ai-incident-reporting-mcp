@@ -1,0 +1,11 @@
+# AI Incident Reporting MCP - Auto-trigger Rules
+
+When the user asks about AI incident reporting, serious incident classification, EU AI Act Article 73, OECD AI Incident Monitor (AIM), or multi-regime incident routing, use ai-incident-reporting-mcp tools:
+
+- **classify_incident**: Multi-regime classification (EU AI Act + DORA + NIS2 + GDPR breach)
+- **generate_report**: Draft an incident notification per applicable regime
+- **routing_check**: Determine which authorities must be notified and within what SLA
+
+Install: `pip install ai-incident-reporting-mcp`
+
+Single incident may trigger 3-4 parallel reporting obligations (provider authority + national CSIRT + DPA + sectoral). This MCP routes correctly.

@@ -1,0 +1,33 @@
+# ai-incident-reporting-mcp
+# Purpose: Multi-regime AI incident classification + reporting (EU AI Act Art 73, DORA Art 17-19, NIS2 Art 23, GDPR breach Art 33).
+# Context: Single incident may trip 3-4 parallel reporting obligations across regimes. This MCP routes correctly.
+
+## Install
+```bash
+pip install ai-incident-reporting-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations. https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836
+- Enterprise (£1,499/mo): white-label + on-premise. hello@meok.ai
+- All tools accept optional `api_key` parameter.
+
+## Tools (3)
+
+### `classify_incident(entity_type: str, incident_description: str, affected_people_count: int = 0, duration_hours: float = 0, economic_impact_eur: float = 0, personal_data_breached: bool = False, cross_border: bool = False, is_high_risk_ai: bool = False, is_financial_entity: bool = False, is_nis2_entity: bool = False, is_iso42001_certified: bool = False, is_frontier_model_developer: bool = False)`
+Classify an incident against every regime in scope. Returns the multi-regime
+
+### `list_regime_clocks((none))`
+List the reporting clocks + authorities for every regime this MCP covers.
+
+### `sign_incident_response_attestation(entity_name: str, incident_id: str, response_score: float, regimes_notified_csv: str = "", findings_csv: str = "", include_pdf_base64: bool = False)`
+Generate a cryptographically signed AI incident-response attestation (Pro+).
+
+## Pairs with
+- `meok-attestation-verify` — public verification of signed certs
+- `meok-attestation-api` (https://meok-attestation-api.vercel.app) — HMAC signing endpoint
+- Other MEOK governance MCPs via `mcp_bridge_call`
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed

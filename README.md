@@ -1,5 +1,8 @@
 # AI Incident Reporting Compliance MCP
 
+[![PyPI](https://img.shields.io/pypi/v/ai-incident-reporting-mcp)](https://pypi.org/project/ai-incident-reporting-mcp/) [![Python](https://img.shields.io/pypi/pyversions/ai-incident-reporting-mcp)](https://pypi.org/project/ai-incident-reporting-mcp/)
+
+
 **One AI incident → many mandatory notifications.** Classifies once, emits every regime's clock + authority + form in parallel.
 
 By [MEOK AI Labs](https://meok.ai).
@@ -57,7 +60,7 @@ Need the complete multi-regime stack? **[councilof.ai](https://councilof.ai)** �
 - [`dora-nis2-crosswalk-mcp`](https://pypi.org/project/dora-nis2-crosswalk-mcp/)
 - [`meok-attestation-verify`](https://pypi.org/project/meok-attestation-verify/)
 
-> **If this tool helps your compliance workflow, please [star this repo](https://github.com/CSOAI-ORG/ai-incident-reporting-mcp/stargazers)** — it helps other teams find it.
+> **If this tool helps your compliance workflow, please [star this repo](https://github.com/meok-ai-labs/ai-incident-reporting-mcp/stargazers)** — it helps other teams find it.
 
 ## License
 
