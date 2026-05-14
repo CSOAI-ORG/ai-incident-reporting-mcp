@@ -62,3 +62,5 @@ Need the complete multi-regime stack? **[councilof.ai](https://councilof.ai)** â
 ## License
 
 MIT â€” [MEOK AI Labs](https://meok.ai), 2026.
+
+<!-- mcp-name: io.github.CSOAI-ORG/ai-incident-reporting-mcp -->
