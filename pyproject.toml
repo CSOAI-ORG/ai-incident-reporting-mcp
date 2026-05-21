@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ai-incident-reporting-mcp"
-version = "1.0.1"
+version = "1.0.3"
 description = "AI Incident Reporting Compliance MCP. Unified classification + reporting-clock tracker across EU AI Act Article 73, DORA Article 19, NIS2 Article 23, GDPR Article 33, ISO/IEC 42001 clause 9, and UK AISI voluntary frontier-model reporting. One incident → all regime clocks in parallel. HMAC-signed post-incident attestation. By MEOK AI Labs."
 license = {file = "LICENSE"}
 readme = "README.md"

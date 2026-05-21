@@ -1,17 +1,18 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.meok-ai-labs/ai-incident-reporting-mcp",
-  "description": "EU AI Act Article 73 incident reporting \u2014 by MEOK AI Labs.",
+  "name": "io.github.CSOAI-ORG/ai-incident-reporting-mcp",
+  "version": "1.0.2",
+  "description": "AI Incident Reporting Compliance MCP. Unified classification + reporting-clock tracker across EU...",
   "repository": {
-    "url": "https://github.com/meok-ai-labs/ai-incident-reporting-mcp",
+    "url": "https://github.com/CSOAI-ORG/ai-incident-reporting-mcp",
     "source": "github"
   },
-  "version": "1.0.0",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "ai-incident-reporting-mcp",
-      "version": "1.0.0",
+      "version": "1.0.2",
+      "runtimeHint": "python",
       "transport": {
         "type": "stdio"
       }
