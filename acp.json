@@ -1,0 +1,21 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "ai-incident-reporting-mcp",
+    "description": "AI Incident Reporting Compliance MCP. Unified classification + reporting-clock tracker across EU...",
+    "version": "1.1.2",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "ai-incident-reporting-mcp"
+      }
+    ],
+    "capabilities": [
+      "classify_incident",
+      "list_regime_clocks",
+      "sign_incident_response_attestation"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "ai-incident-reporting-mcp",
+  "description": "AI Incident Reporting Compliance MCP. Unified classification + reporting-clock tracker across EU...",
+  "url": "https://proofof.ai/scorecard/ai-incident-reporting-mcp.html",
+  "version": "1.1.2",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "classify_incident",
+      "name": "Classify Incident",
+      "description": "classify_incident via ai-incident-reporting-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "list_regime_clocks",
+      "name": "List Regime Clocks",
+      "description": "list_regime_clocks via ai-incident-reporting-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "sign_incident_response_attestation",
+      "name": "Sign Incident Response Attestation",
+      "description": "sign_incident_response_attestation via ai-incident-reporting-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
