@@ -1,0 +1,22 @@
+{
+  "name": "ai-incident-reporting-mcp",
+  "title": "Ai Incident Reporting Mcp",
+  "description": "AI Incident Reporting Compliance MCP. Unified classification + reporting-clock tracker across EU AI Act Article 73, DORA Article 19, NIS2 Article 23, GDPR Article 33, ISO/IEC 42001 clause 9, and UK AISI voluntary frontier-model reporting. One incident \u2192 all regime clocks in parallel. HMAC-signed post-incident attestation. By MEOK AI Labs.",
+  "version": "1.1.2",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "classify_incident"
+    },
+    {
+      "name": "list_regime_clocks"
+    },
+    {
+      "name": "sign_incident_response_attestation"
+    }
+  ]
+}

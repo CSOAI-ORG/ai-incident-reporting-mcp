@@ -73,6 +73,56 @@ This server is part of the **[MEOK AI Labs](https://meok.ai)** ecosystem — 300
 | [cobolbridge.ai](https://cobolbridge.ai) | Legacy modernization |
 
 ## 📜 License
+<!-- meok-faq-schema-v1 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this MCP server free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The free tier gives you 10 calls per day with no API key required. Pro tier is £79/mo for unlimited calls plus cryptographically signed attestations your auditor can verify independently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the signed attestation work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every Pro tier audit produces a HMAC-SHA256 signed certificate with a unique ID and a public verify URL. Your auditor pastes the cert into https://meok-attestation-api.vercel.app/verify and gets an independent valid/invalid response. No contact with MEOK required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which MCP clients does this work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All standard MCP clients: Claude Desktop, Claude Code, Cursor, VS Code with MCP extension, Windsurf, Cline, and any custom MCP-compatible agent. Install via npx meok-setup or pip install for the underlying Python package."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I install all MEOK governance MCPs at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Run npx meok-setup --pack governance to install all 10 governance MCPs and write the configs for Claude Desktop, Cursor, or Windsurf in one command."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the regulation text authoritative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. MEOK syncs daily from the EUR-Lex Cellar SPARQL endpoint, the canonical EU regulation publication system. The text is verbatim with no LLM summarization. Every quote is auditor-defensible and includes the exact article number plus relevance score."
+      }
+    }
+  ]
+}
+</script>
+
 
 MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
 
@@ -138,3 +188,27 @@ buyers can deploy without vendor-lock-in objections.
 > Verify any signed report at <https://meok.ai/verify>.
 
 <!-- BUY-LADDER:END -->
+
+## Configuration
+
+Add to your `claude_desktop_config.json` (Claude Desktop) or your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "ai-incident-reporting-mcp": {
+      "command": "uvx",
+      "args": ["ai-incident-reporting-mcp"]
+    }
+  }
+}
+```
+
+Or: `pip install ai-incident-reporting-mcp` then run the `ai-incident-reporting-mcp` command (stdio transport).
+
+## Examples
+
+Once configured, ask your assistant, for example:
+- "Use `classify_incident` to …"
+- "Use `list_regime_clocks` to …"
+- "Use `sign_incident_response_attestation` to …"

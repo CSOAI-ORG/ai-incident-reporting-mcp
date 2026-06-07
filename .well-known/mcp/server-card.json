@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "name": "ai-incident-reporting-mcp",
+  "version": "1.0.0",
+  "title": "AI Incident Reporting",
+  "description": "Multi-regime incident classification + reporting (EU AI Act, DORA, NIS2, GDPR).",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/meok-ai-labs/ai-incident-reporting-mcp",
+  "license": "MIT",
+  "author": {
+    "name": "MEOK AI Labs",
+    "email": "hello@meok.ai",
+    "url": "https://meok.ai"
+  },
+  "categories": [
+    "governance"
+  ],
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "ai-governance",
+    "compliance",
+    "meok"
+  ],
+  "support_url": "https://github.com/meok-ai-labs",
+  "contact_email": "hello@meok.ai",
+  "endpoints": {
+    "free_tier": {
+      "calls_per_day": 10
+    },
+    "pro": "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K",
+    "enterprise": "hello@meok.ai"
+  }
+}

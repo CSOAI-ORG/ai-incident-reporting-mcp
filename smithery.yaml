@@ -1,0 +1,25 @@
+name: ai-incident-reporting-mcp
+description: 'MCP server: ai-incident-reporting-mcp'
+version: 1.0.5
+author: MEOK AI Labs
+homepage: https://safetyof.ai
+repository: https://github.com/MEOK-AI-Labs/ai-incident-reporting-mcp
+license: MIT
+categories:
+- compliance
+- governance
+tools:
+- name: classify_incident
+  description: Classify an incident against every regime in scope. Returns the multi-regime
+- name: list_regime_clocks
+  description: List the reporting clocks + authorities for every regime this MCP covers.
+- name: sign_incident_response_attestation
+  description: Generate a cryptographically signed AI incident-response attestation
+    (Pro+).
+build:
+  type: python
+  entrypoint: server.py
+  dependencies:
+  - mcp>=1.0.0
+runtime:
+  python: '>=3.10'
