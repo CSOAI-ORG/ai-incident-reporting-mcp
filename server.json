@@ -5,7 +5,8 @@
   "description": "AI Incident Reporting Compliance MCP. Unified classification + reporting-clock tracker across EU...",
   "repository": {
     "url": "https://github.com/CSOAI-ORG/ai-incident-reporting-mcp",
-    "source": "github"
+    "source": "github",
+    "id": "1232725636"
   },
   "packages": [
     {
