@@ -95,11 +95,11 @@ def check_access(api_key: str = ""):
     return _shared_check_access(api_key)
 
 
-FREE_DAILY_LIMIT = 10
+FREE_DAILY_LIMIT = 50
 _usage: dict[str, list[datetime]] = defaultdict(list)
-STRIPE_199 = "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"
-STRIPE_1499 = "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"
-STRIPE_5K = "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"
+STRIPE_199 = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"
+STRIPE_1499 = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"
+STRIPE_5K = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"
 
 
 def _rl(tier="free") -> Optional[str]:
@@ -227,6 +227,25 @@ mcp = FastMCP(
         "or generate a signed incident-response attestation."
     ),
 )
+
+def _server_meter_check(api_key: str = "") -> dict:
+    """Calls the live /verify endpoint for server-side metering. Returns the JSON dict.
+    Fail-open: if /verify is unreachable or KV isn't configured, returns allowed=True
+    (so the local rate-limit in _check_rate_limit remains the safety net)."""
+    try:
+        data = json.dumps({"api_key": api_key, "tool": ""}).encode()
+        req = _meter_urlreq.Request(_METER_URL, data=data,
+            headers={"Content-Type": "application/json"}, method="POST")
+        with _meter_urlreq.urlopen(req, timeout=2.5) as r:
+            d = json.loads(r.read())
+            if isinstance(d, dict) and "allowed" in d:
+                return d
+    except Exception:
+        pass
+    return {"allowed": True, "tier": "anonymous", "remaining": 200, "upgrade_url": "https://meok.ai/pricing"}
+
+
+_METER_URL = "https://proofof.ai/verify"
 
 
 @mcp.tool()
@@ -409,7 +428,7 @@ if __name__ == "__main__":
 # ── MEOK monetization layer (Stripe upgrade · PAYG · pricing) ──────────
 # Free tier is zero-config. Upgrade to Pro (unlimited) or pay-as-you-go per call.
 import os as _meok_os
-MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"  # Pro (unlimited)
+MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"  # Pro (unlimited)
 MEOK_PAYG_KEY = _meok_os.environ.get("MEOK_PAYG_KEY", "")  # set to enable PAYG (x402 / ~GBP0.05 per call)
 MEOK_PRICING = "https://meok.ai/pricing"
 

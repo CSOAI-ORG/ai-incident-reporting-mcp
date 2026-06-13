@@ -1,0 +1,92 @@
+{
+  "name": "Ai Incident Reporting Mcp",
+  "version": "1.1.2",
+  "url": "https://mcp.meok.ai/ai-incident-reporting-mcp/a2a",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "protocolVersion": "0.3.0",
+  "description": "AI Incident Reporting Compliance MCP. Unified classification + reporting-clock tracker across EU AI Act Article 73, DORA Article 19, NIS2 Article 23, GDPR Article 33, ISO/IEC 42001 clause 9, and UK AISI voluntary frontier-model reporting. One incident → all regime clocks in parallel. HMAC-signed post-incident attestation. By MEOK AI Labs.",
+  "provider": {
+    "organization": "MEOK AI LABS",
+    "url": "https://meok.ai"
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "classify_incident",
+      "name": "Classify Incident",
+      "description": "Classify Incident — a tool of the ai-incident-reporting-mcp MCP.",
+      "tags": [
+        "compliance",
+        "dora",
+        "nis2",
+        "gdpr",
+        "attestation"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "list_regime_clocks",
+      "name": "List Regime Clocks",
+      "description": "List Regime Clocks — a tool of the ai-incident-reporting-mcp MCP.",
+      "tags": [
+        "compliance",
+        "dora",
+        "nis2",
+        "gdpr",
+        "attestation"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "sign_incident_response_attestation",
+      "name": "Sign Incident Response Attestation",
+      "description": "Sign Incident Response Attestation — a tool of the ai-incident-reporting-mcp MCP.",
+      "tags": [
+        "compliance",
+        "dora",
+        "nis2",
+        "gdpr",
+        "attestation"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    }
+  ],
+  "documentationUrl": "https://meok.ai",
+  "x-meok": {
+    "mcp_name": "ai-incident-reporting-mcp",
+    "verifier": "https://proofof.ai/verify",
+    "governed_by": "CSOAI 52-article charter"
+  }
+}
