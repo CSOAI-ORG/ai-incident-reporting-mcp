@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ai-incident-reporting-mcp"
-version = "1.1.7"
+version = "1.1.8"
 description = "AI Incident Reporting Compliance MCP. Unified classification + reporting-clock tracker across EU AI Act Article 73, DORA Article 19, NIS2 Article 23, GDPR Article 33, ISO/IEC 42001 clause 9, and UK AISI voluntary frontier-model reporting. One incident → all regime clocks in parallel. HMAC-signed post-incident attestation. By MEOK AI Labs."
 license = {file = "LICENSE"}
 readme = "README.md"
@@ -24,3 +24,22 @@ only-include = ["server.py"]
 
 [project.scripts]
 ai-incident-reporting-mcp = "server:main"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I", "N"]
+ignore = ["E501"]
+
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_Configs = true
+disallow_untyped_defs = true
+

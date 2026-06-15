@@ -214,3 +214,8 @@ Once configured, ask your assistant, for example:
 - "Use `classify_incident` to …"
 - "Use `list_regime_clocks` to …"
 - "Use `sign_incident_response_attestation` to …"
+
+## See also
+
+MEOK compliance MCP fleet:
+[`meok-eu-ai-act-art-26-fria-mcp`](https://github.com/CSOAI-ORG/meok-eu-ai-act-art-26-fria-mcp), [`nis2-compliance-mcp`](https://github.com/CSOAI-ORG/nis2-compliance-mcp)
