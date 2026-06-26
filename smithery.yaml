@@ -3,7 +3,7 @@ description: 'MCP server: ai-incident-reporting-mcp'
 version: 1.0.5
 author: MEOK AI Labs
 homepage: https://safetyof.ai
-repository: https://github.com/MEOK-AI-Labs/ai-incident-reporting-mcp
+repository: https://github.com/CSOAI-ORG/ai-incident-reporting-mcp
 license: MIT
 categories:
 - compliance
