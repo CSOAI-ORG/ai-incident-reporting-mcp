@@ -97,9 +97,9 @@ def check_access(api_key: str = ""):
 
 FREE_DAILY_LIMIT = 50
 _usage: dict[str, list[datetime]] = defaultdict(list)
-STRIPE_199 = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"
-STRIPE_1499 = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"
-STRIPE_5K = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"
+STRIPE_199 = "https://meok.ai/pricing"
+STRIPE_1499 = "https://meok.ai/pricing"
+STRIPE_5K = "https://meok.ai/pricing"
 
 
 def _rl(tier="free") -> Optional[str]:
@@ -109,7 +109,7 @@ def _rl(tier="free") -> Optional[str]:
     cutoff = now - timedelta(days=1)
     _usage["anonymous"] = [t for t in _usage["anonymous"] if t > cutoff]
     if len(_usage["anonymous"]) >= FREE_DAILY_LIMIT:
-        return f"Free tier limit ({FREE_DAILY_LIMIT}/day). Pro £199/mo: {STRIPE_199}"
+        return f"Free tier limit ({FREE_DAILY_LIMIT}/day). Pro a per-job quote: {STRIPE_199}"
     _usage["anonymous"].append(now)
     return None
 
@@ -343,7 +343,7 @@ def classify_incident(
             "incident_description": incident_description,
             "regimes_triggered": [],
             "note": "No reporting regimes triggered based on provided flags. Still run an internal post-incident review and retain evidence.",
-            "upsell_pro": f"Pro £199/mo auto-generates notifications for all triggered regimes: {STRIPE_199}" if tier == "free" else None,
+            "upsell_pro": f"Pro a per-job quote auto-generates notifications for all triggered regimes: {STRIPE_199}" if tier == "free" else None,
         }, indent=2)
 
     tightest = None
@@ -366,7 +366,7 @@ def classify_incident(
         "critical_next_action": (
             f"Tightest deadline is {tightest}. Treat as the master SLA for your incident-response runbook."
         ),
-        "upsell_pro": f"Pro £199/mo: signed multi-regime incident cert + auto-generated notification templates: {STRIPE_199}" if tier == "free" else None,
+        "upsell_pro": f"Pro a per-job quote: signed multi-regime incident cert + auto-generated notification templates: {STRIPE_199}" if tier == "free" else None,
     }, indent=2)
 
 
@@ -399,7 +399,7 @@ def sign_incident_response_attestation(
         return json.dumps({"error": msg, "upgrade_url": STRIPE_199})
     if tier == "free":
         return json.dumps({
-            "error": "Signed attestations require Pro (£199/mo) or Enterprise tier.",
+            "error": "Signed attestations require Pro or Enterprise tier.",
             "upgrade_url": STRIPE_199,
         })
     findings = [f.strip() for f in findings_csv.split(",") if f.strip()]
@@ -425,10 +425,10 @@ if __name__ == "__main__":
     main()
 
 
-# ── MEOK monetization layer (Stripe upgrade · PAYG · pricing) ──────────
-# Free tier is zero-config. Upgrade to Pro (unlimited) or pay-as-you-go per call.
+# ── MEOK pricing pointer (pay per delivered job; no subscriptions) ──────────
+# No tiers. Jobs are quoted individually at https://meok.ai/pricing.
 import os as _meok_os
-MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"  # Pro (unlimited)
+MEOK_STRIPE_UPGRADE = "https://meok.ai/pricing"  # Pro (unlimited)
 MEOK_PAYG_KEY = _meok_os.environ.get("MEOK_PAYG_KEY", "")  # set to enable PAYG (x402 / ~GBP0.05 per call)
 MEOK_PRICING = "https://meok.ai/pricing"
 
